@@ -13,10 +13,22 @@ import java.util.List;
 
 public class AppInitializer {
     public static void main(String[] args) {
-        CustomerRepository customerRepository = new CustomerRepository();
+     /*   CustomerRepository customerRepository = new CustomerRepository();
        Customer customer = getCustomerEntity();
        customerRepository.saveCustomer(customer);
-       customerRepository.updateCustomer(customer);
+       customerRepository.updateCustomer(customer);*/
+
+        CustomerRepository customerRepository = new CustomerRepository();
+        Customer customer=customerRepository.getCustomer(1l);
+        System.out.println("Customer_id : "+customer.getId());
+
+        boolean isUpdated=customerRepository.updateCustomer(customer);
+        if (isUpdated){
+            System.out.println("Customer "+customer.getId()+"Update Successfully");
+        }else {
+            System.out.println("Customer "+customer.getId()+"Note Update");
+        }
+        customerRepository.deleteCustomer(customer);
        /* Customer customer = new Customer();
         customer.setId(1);
         *//*customer.setName("janith");
@@ -57,6 +69,12 @@ public class AppInitializer {
             List<MobileNumber> phonNumbers = new ArrayList<>();
             phonNumbers.add(new MobileNumber("DILOGE", "0760904402"));
             phonNumbers.add(new MobileNumber("MOBILET", "07123456790"));
+
+            Session session = SessionFactoryConfiguration.getInstance().getSession();
+            Transaction transaction = session.beginTransaction();
+            session.save(customer);
+            transaction.commit();
+            session.close();
 
             return customer;
 

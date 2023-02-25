@@ -14,13 +14,13 @@ public class CustomerRepository {
         session = SessionFactoryConfiguration.getInstance().getSession();
     }
 
-    public Integer saveCustomer(Customer customer) {
+    public Long saveCustomer(Customer customer) {
         Transaction transaction = session.beginTransaction();
 /*        Integer id = (Integer) session.save(customer);
         transaction.commit();*/
 
         try {
-            Integer id = (Integer) session.save(customer);
+            Long id = (Long) session.save(customer);
             transaction.commit();
             session.close();
             return id;
@@ -28,7 +28,7 @@ public class CustomerRepository {
             transaction.rollback();
             session.close();
             ex.printStackTrace();
-            return -1;
+            return -1l;
         }
 
     }
@@ -55,6 +55,18 @@ public class CustomerRepository {
         } catch (Exception e) {
             e.printStackTrace();
             throw e;
+        }
+    }
+    public boolean deleteCustomer(Customer customer){
+        Transaction transaction= session.beginTransaction();
+        try{
+            session.delete(customer);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
         }
     }
 }
