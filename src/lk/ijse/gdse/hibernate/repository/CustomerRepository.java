@@ -23,11 +23,27 @@ public class CustomerRepository {
             session.close();
             return id;
         }catch (Exception ex){
-            transaction.commit();
+            transaction.rollback();
             session.close();
             ex.printStackTrace();
             return -1;
         }
 
     }
+
+    public boolean updateCustomer(Customer customer){
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.update(customer);
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

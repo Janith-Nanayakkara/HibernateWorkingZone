@@ -16,6 +16,7 @@ public class AppInitializer {
         CustomerRepository customerRepository = new CustomerRepository();
        Customer customer = getCustomerEntity();
        customerRepository.saveCustomer(customer);
+       customerRepository.updateCustomer(customer);
        /* Customer customer = new Customer();
         customer.setId(1);
         *//*customer.setName("janith");
