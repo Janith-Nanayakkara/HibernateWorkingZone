@@ -6,6 +6,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -29,7 +31,9 @@ public class Customer {
     @Transient
     private  String dob;
     @CreationTimestamp
-    private Date createDate;
+   /* private Date createDate;*/
+   /* private Time createDate;*/
+    private Timestamp createDate;
 
     public Customer(long id, CustName name, String address, double salary, int age, List<MobileNumber> phoneNo) {
         this.id = id;
