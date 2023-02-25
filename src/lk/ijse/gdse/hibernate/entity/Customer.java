@@ -1,17 +1,29 @@
 package lk.ijse.gdse.hibernate.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lk.ijse.gdse.hibernate.embaded.CustName;
+import lk.ijse.gdse.hibernate.embaded.MobileNumber;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
     private long id;
-    private String name;
+    @Column(name = "customer_name")
+    private CustName name;
+    @Column(name = "customer_address")
     private String Address;
+    @Column(name = "customer_salary")
     private double salary;
+    @Column(name = "customer_age",columnDefinition = "SMALLINT")
+    private int age;
 
-    public Customer(long id, String name, String address, double salary) {
+    private List<MobileNumber>phoneNo;
+
+    public Customer(long id, CustName name, String address, double salary) {
         this.setId(id);
         this.setName(name);
         setAddress(address);
@@ -29,11 +41,11 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
+    public CustName getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(CustName name) {
         this.name = name;
     }
 
