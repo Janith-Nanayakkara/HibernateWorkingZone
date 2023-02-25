@@ -20,8 +20,18 @@ public class Customer {
     private double salary;
     @Column(name = "customer_age",columnDefinition = "SMALLINT")
     private int age;
-
+    @CollectionTable(name = "customer_mobile_Number",
+    joinColumns = @JoinColumn(name = "customer_id"))
     private List<MobileNumber>phoneNo;
+
+    public Customer(long id, CustName name, String address, double salary, int age, List<MobileNumber> phoneNo) {
+        this.id = id;
+        this.name = name;
+        Address = address;
+        this.salary = salary;
+        this.setAge(age);
+        this.phoneNo = phoneNo;
+    }
 
     public Customer(long id, CustName name, String address, double salary) {
         this.setId(id);
@@ -63,5 +73,13 @@ public class Customer {
 
     public void setSalary(double salary) {
         this.salary = salary;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

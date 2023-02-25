@@ -1,10 +1,14 @@
 package lk.ijse.gdse.hibernate;
 
 import lk.ijse.gdse.hibernate.embaded.CustName;
+import lk.ijse.gdse.hibernate.embaded.MobileNumber;
 import lk.ijse.gdse.hibernate.entity.Customer;
 import lk.ijse.gdse.hibernate.util.SessionFactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppInitializer {
     public static void main(String[] args) {
@@ -22,6 +26,10 @@ public class AppInitializer {
         customer.setName(custName);
         customer.setAddress("Ahanagama");
         customer.setSalary(50000.00);
+
+        List<MobileNumber>phonNumbers=new ArrayList<>();
+        phonNumbers.add(new MobileNumber("DILOGE","0760904402"));
+        phonNumbers.add(new MobileNumber("MOBILET","07123456790"));
 
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
