@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="antlr-2.7.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/classmate-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/hibernate-commons-annotations-5.0.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/hibernate-core-5.2.11.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/jboss-logging-3.3.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/lucene-core-5.5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/lucene-queryparser-5.5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/mysql-connector-j-8.0.31.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lk/ijse/gdse/hibernate/lib/xml-apis-1.3.03.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
