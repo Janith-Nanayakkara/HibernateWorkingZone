@@ -14,8 +14,20 @@ public class CustomerRepository {
     }
     public Integer saveCustomer(Customer customer){
         Transaction transaction = session.beginTransaction();
-        Integer id = (Integer) session.save(customer);
-        transaction.commit();
-        return id;
+/*        Integer id = (Integer) session.save(customer);
+        transaction.commit();*/
+
+        try {
+            Integer id = (Integer) session.save(customer);
+            transaction.commit();
+            session.close();
+            return id;
+        }catch (Exception ex){
+            transaction.commit();
+            session.close();
+            ex.printStackTrace();
+            return -1;
+        }
+
     }
 }
