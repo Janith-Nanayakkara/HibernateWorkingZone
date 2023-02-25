@@ -30,7 +30,7 @@ public class AppInitializer {
         List<MobileNumber>phonNumbers=new ArrayList<>();
         phonNumbers.add(new MobileNumber("DILOGE","0760904402"));
         phonNumbers.add(new MobileNumber("MOBILET","07123456790"));
-
+        customer.setPhoneNo(phonNumbers);
         Session session = SessionFactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         session.save(customer);

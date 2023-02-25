@@ -30,7 +30,7 @@ public class Customer {
         Address = address;
         this.salary = salary;
         this.setAge(age);
-        this.phoneNo = phoneNo;
+        this.setPhoneNo(phoneNo);
     }
 
     public Customer(long id, CustName name, String address, double salary) {
@@ -81,5 +81,13 @@ public class Customer {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public List<MobileNumber> getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(List<MobileNumber> phoneNo) {
+        this.phoneNo = phoneNo;
     }
 }
