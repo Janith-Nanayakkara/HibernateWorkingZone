@@ -1,5 +1,8 @@
 package lk.ijse.gdse.hibernate.embaded;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class MobileNumber {
     private String type;
     private String mobileNo;

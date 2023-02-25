@@ -2,8 +2,10 @@ package lk.ijse.gdse.hibernate.entity;
 
 import lk.ijse.gdse.hibernate.embaded.CustName;
 import lk.ijse.gdse.hibernate.embaded.MobileNumber;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -20,9 +22,14 @@ public class Customer {
     private double salary;
     @Column(name = "customer_age",columnDefinition = "SMALLINT")
     private int age;
+    @ElementCollection
     @CollectionTable(name = "customer_mobile_Number",
     joinColumns = @JoinColumn(name = "customer_id"))
     private List<MobileNumber>phoneNo;
+    @Transient
+    private  String dob;
+    @CreationTimestamp
+    private Date createDate;
 
     public Customer(long id, CustName name, String address, double salary, int age, List<MobileNumber> phoneNo) {
         this.id = id;
