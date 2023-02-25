@@ -13,12 +13,24 @@ import java.util.List;
 
 public class AppInitializer {
     public static void main(String[] args) {
+        CustomerRepository customerRepository = new CustomerRepository();
+        Customer customer=customerRepository.getCustomer(1l);
+        System.out.println("Customer_id : "+customer.getId());
+
+        boolean isDelete=customerRepository.deleteCustomer(customer);
+        if (isDelete){
+            System.out.println("Customer "+customer.getId()+"Update Successfully");
+        }else {
+            System.out.println("Customer "+customer.getId()+"Note Update");
+        }
      /*   CustomerRepository customerRepository = new CustomerRepository();
        Customer customer = getCustomerEntity();
        customerRepository.saveCustomer(customer);
        customerRepository.updateCustomer(customer);*/
 
-        CustomerRepository customerRepository = new CustomerRepository();
+    /*
+      Update ekata
+      CustomerRepository customerRepository = new CustomerRepository();
         Customer customer=customerRepository.getCustomer(1l);
         System.out.println("Customer_id : "+customer.getId());
 
@@ -28,7 +40,7 @@ public class AppInitializer {
         }else {
             System.out.println("Customer "+customer.getId()+"Note Update");
         }
-        customerRepository.deleteCustomer(customer);
+        customerRepository.deleteCustomer(customer);*/
        /* Customer customer = new Customer();
         customer.setId(1);
         *//*customer.setName("janith");
