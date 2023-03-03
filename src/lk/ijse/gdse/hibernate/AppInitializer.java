@@ -23,7 +23,7 @@ public class AppInitializer {
         }else {
             System.out.println("Customer "+customer.getId()+"Note Update");
         }
-     /*   CustomerRepository customerRepository = new CustomerRepository();
+     /* CustomerRepository customerRepository = new CustomerRepository();
        Customer customer = getCustomerEntity();
        customerRepository.saveCustomer(customer);
        customerRepository.updateCustomer(customer);*/
@@ -76,7 +76,7 @@ public class AppInitializer {
 
             customer.setName(custName);
             customer.setAddress("Ahanagama");
-            customer.setSalary(50000.00);
+          /*  customer.setSalary(50000.00);*/
 
             List<MobileNumber> phonNumbers = new ArrayList<>();
             phonNumbers.add(new MobileNumber("DILOGE", "0760904402"));
