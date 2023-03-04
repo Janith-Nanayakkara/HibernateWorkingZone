@@ -50,7 +50,9 @@ public class CustomerRepository {
 
     public Customer getCustomer(long id) {
         try {
-            return session.get(Customer.class, id);
+            Customer customer= session.get(Customer.class, id);
+            session.close();
+            return customer;
 
         } catch (Exception e) {
             e.printStackTrace();

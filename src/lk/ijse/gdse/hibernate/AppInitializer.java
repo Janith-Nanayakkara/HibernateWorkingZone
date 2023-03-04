@@ -19,9 +19,9 @@ public class AppInitializer {
 
         boolean isDelete=customerRepository.deleteCustomer(customer);
         if (isDelete){
-            System.out.println("Customer "+customer.getId()+"Update Successfully");
+            System.out.println("Customer "+customer.getId()+"Delete Successfully");
         }else {
-            System.out.println("Customer "+customer.getId()+"Note Update");
+            System.out.println("Customer "+customer.getId()+"Note Delete");
         }
      /* CustomerRepository customerRepository = new CustomerRepository();
        Customer customer = getCustomerEntity();
@@ -66,7 +66,7 @@ public class AppInitializer {
         transaction.commit();
         session.close();*/
     }
-        private static Customer getCustomerEntity() {
+        /*private static Customer getCustomerEntity() {
             Customer customer = new Customer();
             customer.setId(1);
             CustName custName = new CustName();
@@ -76,7 +76,7 @@ public class AppInitializer {
 
             customer.setName(custName);
             customer.setAddress("Ahanagama");
-          /*  customer.setSalary(50000.00);*/
+           customer.setSalary(50000.00);
 
             List<MobileNumber> phonNumbers = new ArrayList<>();
             phonNumbers.add(new MobileNumber("DILOGE", "0760904402"));
@@ -87,7 +87,7 @@ public class AppInitializer {
             session.save(customer);
             transaction.commit();
             session.close();
-            return customer;
+            return customer;*/
 
-    }
+  //  }
 }
