@@ -10,6 +10,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 
 public class SessionFactoryConfiguration {
 
@@ -21,11 +22,22 @@ public class SessionFactoryConfiguration {
     }
 
     private SessionFactoryConfiguration() {
-        sessionFactory =  new MetadataSources(new StandardServiceRegistryBuilder().configure().build())
+     /*   sessionFactory =  new MetadataSources(new StandardServiceRegistryBuilder().configure().build())
                 .addAnnotatedClass(Customer.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
-                .build().getSessionFactoryBuilder().build();
+                .build().getSessionFactoryBuilder().build();*/
+        //Configuration
+   /*     Configuration configuration = new Configuration()
+                .configure().
+                        addAnnotatedClass(Customer.class);
+        sessionFactory = configuration.buildSessionFactory();*/
+        //Single LIne Configuration
+         sessionFactory = new Configuration()
+                .configure().
+                        addAnnotatedClass(Customer.class).buildSessionFactory();
+       /* sessionFactory = configuration.buildSessionFactory();*/
+
     }
 
     public Session getSession() throws HibernateException {
