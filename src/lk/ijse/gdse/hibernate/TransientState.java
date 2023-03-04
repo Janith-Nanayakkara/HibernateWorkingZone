@@ -13,12 +13,8 @@ public class TransientState {
         Customer customer = new Customer();
         customer.setAddress("Galle");
         customer.setAge(21);
-
         session.save(customer);
-
         transaction.commit();
         session.close();
-
-        
     }
 }
